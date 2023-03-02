@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- font family -->
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital@1&family=Nunito+Sans:ital,wght@0,400;0,700;0,800;1,200;1,400;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600&display=swap" rel="stylesheet">
+
+        <!-- font awosome cdn -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- main style sheet  -->
+        <link rel="stylesheet" href="./style.css">
+
+    <title>AI Univers Hub</title>
+  </head>
+  <body>
+    
+   <div class="container">
+    <header class="mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">AI Universe Hub</h1>
+            </div>
+            <div class="col-md-12 text-center mt-3">
+                <button class="btn btn-danger">Sort by date</button>
+            </div>
+        </div>
+
+         <!-- spinner add -->
+
+         <div class="text-center  spiner-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+    </header>
+
+    <main class="mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card p-4">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <ol>
+                    <li>Natural language processing</li>
+                    <li>  Contextual understanding</li>
+                    <li>  Text generation</li>
+                  </ol>
+                  <hr>
+                  <div id="footer" class="footer d-flex justify-content-between align-items-center">
+                      <div class="text">
+                        <h5>title of card</h5>
+                     <p> <i class="fa-regular fa-calendar-days"></i> <span>03/02/2023</span></p>
+                      </div>
+                      <div class="text"><i class="fa-solid fa-arrow-right fs-4"></i></div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+
+          <!-- show more button -->
+
+        <div class="text-center">
+            <button class="btn btn-danger mb-5">Show More</button>
+        </div>
+         
+    </main>
+
+
+   </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- main js file -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>

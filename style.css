@@ -1,0 +1,12 @@
+body{
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+
+.spiner-center{
+    position: relative;
+    top: 10rem;
+}
