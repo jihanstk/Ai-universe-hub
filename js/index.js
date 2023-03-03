@@ -1,20 +1,20 @@
 
-const loadDataFromApi =()=>{
+const loadDataFromApi =(dataLimit)=>{
     loader(true)
     fetch("https://openapi.programming-hero.com/api/ai/tools")
     .then(res=>res.json())
-    .then(data=>showData(data.data.tools))
+    .then(data=>showData(data.data.tools,dataLimit))
 
 
 }
 
 
-const showData =infos=>{
+const showData =(infos,dataLimit)=>{
     console.log(infos);
     
     const cardContainer = document.getElementById("card-container");
     const showBtnContainer = document.getElementById("show-btn-container");
-    if(infos.length >6){
+    if(dataLimit && infos.length >6){
         showBtnContainer.classList.remove("d-none")
         infos=infos.slice(0 , 6);
     }else{
@@ -69,6 +69,12 @@ const loader=isLoading =>{
 }
 
 
-
+document.getElementById("show-btn").addEventListener("click",()=>{
 
 loadDataFromApi()
+
+})
+
+
+
+loadDataFromApi(6)
