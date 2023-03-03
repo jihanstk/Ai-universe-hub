@@ -1,6 +1,6 @@
 
 const loadDataFromApi =()=>{
-
+    loader(true)
     fetch("https://openapi.programming-hero.com/api/ai/tools")
     .then(res=>res.json())
     .then(data=>showData(data.data.tools))
@@ -13,7 +13,13 @@ const showData =infos=>{
     console.log(infos);
     
     const cardContainer = document.getElementById("card-container");
-
+    const showBtnContainer = document.getElementById("show-btn-container");
+    if(infos.length >6){
+        showBtnContainer.classList.remove("d-none")
+        infos=infos.slice(0 , 6);
+    }else{
+        showBtnContainer.classList.add("d-none")
+    }
    
     infos.forEach(info => {
         let colElement =document.createElement("div");
@@ -47,9 +53,20 @@ const showData =infos=>{
         cardContainer.appendChild(colElement)
     });
    
-  
+  loader(false)
 }
 
+
+
+
+const loader=isLoading =>{
+    const loaderSection = document.getElementById("loader");
+    if(isLoading){
+        loaderSection.classList.remove("d-none");
+    }else{
+        loaderSection.classList.add("d-none")
+    }
+}
 
 
 
