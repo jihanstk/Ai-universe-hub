@@ -93,7 +93,7 @@ const detailsDisplay =(details)=>{
     modalContainer.innerHTML=`
             <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-cross" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex justify-content-between">
             <div class="row">
@@ -129,10 +129,14 @@ const detailsDisplay =(details)=>{
                         
                         <div class="image">
                            
-                        </div>
+                            <img class="img-fluid" src="${details.image_link ? details.image_link[0]:"photo haven't yet"}" alt="">
+                            <span class="px-3 rounded">${details.accuracy ? details.accuracy.score:""} accuracy</span>
+                            </div>
 
                         <div class="text-center mt-5">
-                           
+                        <h5>${details.input_output_examples[0].input}</h5>
+                        <p>${details.input_output_examples ? details.input_output_examples[1].input:"No! Not Yet! Take a break!!!"}</p>
+
                         </div>
 
                     </div>
