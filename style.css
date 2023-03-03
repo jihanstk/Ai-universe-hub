@@ -34,3 +34,11 @@ body{
     color: whitesmoke;
     
 }
+.btn-cross{
+    position: relative;
+    top: -25px;
+    right: -22px;
+    background-color: #ee5757;
+    border-radius:50% ;
+    opacity: 1;
+}
