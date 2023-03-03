@@ -110,13 +110,17 @@ const detailsDisplay =(details)=>{
                         <div class="col-6">
                             <h5>feature</h5>
                             <ul>
-                               
+                            <li>${details.features ? details.features[1].feature_name : "not found"}</li>
+                            <li>${details.features ? details.features[2].feature_name : "not found"}</li>
+                            <li>${details.features ? details.features[3].feature_name : "not found"}</li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <h5>integration</h5>
                             <ul>
-                              
+                            <li>${details.integrations ? details.integrations[0]:"not found"}</li>
+                            <li>${details.integrations ? details.integrations[1]:"not found"}</li>
+                            <li>${details.integrations ? details.integrations[2]:"not found"}</li>
                             </ul>
                         </div>
                     </div>
