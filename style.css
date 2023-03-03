@@ -10,3 +10,15 @@ body{
     position: relative;
     top: 10rem;
 }
+
+#details-btn{
+    outline: none;
+    border: none;
+    color: tomato;
+}
+#details-btn:hover{
+    color: rgb(189, 39, 13);
+}
+.modal-details{
+    max-width: 875px !important;
+}
