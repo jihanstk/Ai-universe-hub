@@ -15,6 +15,7 @@ body{
     outline: none;
     border: none;
     color: tomato;
+    background-color: transparent;
 }
 #details-btn:hover{
     color: rgb(189, 39, 13);
@@ -25,7 +26,7 @@ body{
 .image{
     position: relative;
 }
-.image > span{
+.accuracy{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -36,9 +37,16 @@ body{
 }
 .btn-cross{
     position: relative;
-    top: -25px;
-    right: -22px;
+    top: -70px;
+    right: -70px;
     background-color: #ee5757;
     border-radius:50% ;
     opacity: 1;
+}
+.modal-content{
+    height: 600px;
+}
+
+.li-color li{
+    color: rgb(84, 83, 83);
 }
