@@ -1,9 +1,14 @@
 // from api data load
+var infoData =[];
 const loadDataFromApi =(dataLimit)=>{
     loader(true)
     fetch("https://openapi.programming-hero.com/api/ai/tools")
     .then(res=>res.json())
-    .then(data=>showData(data.data.tools,dataLimit))
+    .then(data=>{ 
+        infoData = data.data.tools;
+        showData(infoData,dataLimit)
+        
+    })
 
 
 }
@@ -25,8 +30,8 @@ const showData =(infos,dataLimit)=>{
         
     }
   
-       
-
+   
+     
         // let sorting = sortByDate(infos);
         
         infos.forEach(info => {
@@ -64,10 +69,23 @@ const showData =(infos,dataLimit)=>{
     // const sort = sortByDate(infos);
     
    
-
+    
     loader(false)
 }
 
+// sort function
+
+document.getElementById("sorting").addEventListener("click",(event)=>{
+       if(infoData.length > 0){
+
+           infoData.sort((a, b)=> new Date(b.published_in) - new Date(a.published_in) )
+         document.getElementById("card-container").innerHTML="";
+           showData(infoData)  ; 
+        }
+   
+    // showData()
+    
+      });
 
 
 
@@ -85,6 +103,7 @@ const loader=isLoading =>{
 document.getElementById("show-btn").addEventListener("click",()=>{
 
 loadDataFromApi()
+
 
 })
 
@@ -113,10 +132,10 @@ const detailsDisplay =(details)=>{
                     <h5>${details.description}</h5>
                     <div class="row">
                     <div class="col-md-4 p-3">
-                    <p class=" text-success">${details.pricing[0].price!="0" ? details.pricing[0].price : "free of cost"} ${details.pricing? details.pricing[0].plan :""}</p>
+                    <p class=" text-success">${details.pricing?details.pricing[0].price : "free of cost"} ${details.pricing? details.pricing[0].plan :""}</p>
                     </div>
-                    <div class="col-md-4 p-3"><p class="text-warning">${details.pricing[1].price!="0" ? details.pricing[1].price : "free of cost"} ${details.pricing? details.pricing[1].plan :""}</p></div>
-                    <div class="col-md-4 p-3"><p class="text-danger">${details.pricing[2].price!="0" ?details.pricing.price[2].price : "free of cost"} ${ details.pricing ? details.pricing[2].plan:""}</p></div>
+                    <div class="col-md-4 p-3"><p class="text-warning">${details.pricing?details.pricing[1].price : "free of cost"} ${details.pricing? details.pricing[1].plan :""}</p></div>
+                    <div class="col-md-4 p-3"><p class="text-danger">${details.pricing? details.pricing[2].price : "free of cost"} ${ details.pricing ? details.pricing[2].plan:""}</p></div>
                     </div>
                     <div class="row">
                         <div class="col-6">
@@ -160,14 +179,11 @@ const detailsDisplay =(details)=>{
 
 
 }
-
-// sort function
-const sortByDate = sortElement =>{
-    sortElement.sort(function(a, b) {
-        return new Date(b.published_in) - new Date(a.published_in);
-    });
+// sorting function
+const sortByDate = (infos) =>{
+    infos.sort((a, b)=> new Date(b.published_in) - new Date(a.published_in) )
+   
 }
-
 loadDataFromApi(6)
 
 
